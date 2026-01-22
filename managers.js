@@ -4,10 +4,10 @@ var managers = {
     "merch2" : "Daniel"
   },
   "murderPrevention" : {
-    "branchLeader" : "Alex"
+    "branchLeader" : "Alex",
+    "preventer1" : "Anirudh"
   },
   "investigators" : {
-    "branchLeader" : "Kaden",
-    "investigator1" : 
-  },
+    "branchLeader" : "Kaden"
+  }
 };
