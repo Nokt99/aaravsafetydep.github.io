@@ -8,8 +8,8 @@ var managers = {
     "preventer1" : "Anirudh"
   },
   "investigators" : {
-    "branchLeader" : "Kaden"
-    "investigator1": "Zaki
+    "branchLeader" : "Kaden",
+    "investigator1": "Zaki"
   },
   "bodyGuards" : {
     "branchLeader" : "Ian",
