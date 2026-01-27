@@ -9,6 +9,53 @@
       <br>
       <title><strong>THE ORIGINAL OG PRIME</strong></title>
       <img src="Assets/OgPrime.JPEG" alt="Og Prime">
+
+      <button id="adminBtn">ADMIN EDITOR</button>
+
+      <script>
+      let allowedUsers = ["USERNAME1","USERNAME2","USERNAME3"]
+      let currentUser = "PUT_CURRENT_GITHUB_USERNAME_HERE"
+      let editorOn = false
+
+      document.getElementById("adminBtn").onclick = function() {
+        if (allowedUsers.includes(currentUser)) {
+          editorOn = true
+          document.body.contentEditable = true
+          alert("Editor Enabled")
+        } else {
+          alert("Access Denied")
+        }
+      }
+
+      document.addEventListener('dblclick', function(e) {
+        if (editorOn) {
+          let add = confirm("Add photo here?")
+          if (add) {
+            let input = document.createElement('input')
+            input.type = 'file'
+            input.accept = 'image/*'
+            input.style.display = 'none'
+
+            input.onchange = function() {
+              let file = input.files[0]
+              if (file) {
+                let reader = new FileReader()
+                reader.onload = function(event) {
+                  let img = document.createElement('img')
+                  img.src = event.target.result
+                  e.target.appendChild(img)
+                }
+                reader.readAsDataURL(file)
+              }
+            }
+
+            document.body.appendChild(input)
+            input.click()
+          }
+        }
+      })
+      </script>
+
     </body>
   </head>
 </html>
